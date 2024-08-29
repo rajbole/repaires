@@ -9,7 +9,7 @@ if (isset($_SESSION['is_adminlogin'])) {
 }
 ?>
 <div class="col-sm-9 col-md-10 mt-5"><!-- user change password -->
-    <div class="col-sm-2 bg-info sidebar py-2">Request</div>
+    <div class="col-sm-2 bg-info sidebar py-2 text-white">Request</div>
     <div class="col-sm-6 mb-5 mt-5"><!-- satrt 2nd column -->
         <?php
         $sql = "SELECT request_id, request_info, request_date FROM submitrequest_tb";

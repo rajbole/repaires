@@ -17,8 +17,8 @@
         <nav class="col-sm-2 bg-light sidebar py-5"><!-- side Bar end-->
             <div>
                 <ul class="nav flex-column">
-                    <li class="nav-item"><a class="nav-link active bg-info" href="dashboard.php"><i class="fas fa-user"></i> Dashbord</a></li>
-                    <li class="nav-item"><a class="nav-link" href="work.php"><i class="fab fa-accessible-icon"></i> work</a></li>
+                    <li class="nav-item"><a class="nav-link active bg-info" href="dashboard.php"><i class="fas fa-user-edit"></i> Dashbord</a></li>
+                    <li class="nav-item"><a class="nav-link" href="work.php"><i class="	fa fa-file"></i> work</a></li>
                     <li class="nav-item"><a class="nav-link" href="request.php"><i class="fa fa-align-center"></i> Requests</a></li>
                     <li class="nav-item"><a class="nav-link" href="assets.php"><i class="fas fa-database"></i> Assets</a></li>
                     <li class="nav-item"><a class="nav-link" href="technician.php"><i class="fa fa-wrench"></i> Technician</a></li>

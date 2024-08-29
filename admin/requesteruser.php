@@ -1,6 +1,12 @@
 <?php
 include('includes/dheader.php');
 include('../dbConnection.php');
+session_start();
+ if(isset($_SESSION['is_adminlogin'])){
+  $aEmail = $_SESSION['aEmail'];
+ } else {
+  echo "<script> location.href='login.php'; </script>";
+ }
 ?>
 <div class="col-sm-9 col-md-10 mt-5 text-center">
   <!--Table-->

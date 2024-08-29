@@ -1,6 +1,12 @@
 <?php    
 include('includes/dheader.php'); 
 include('../dbConnection.php');
+session_start();
+ if(isset($_SESSION['is_adminlogin'])){
+  $aEmail = $_SESSION['aEmail'];
+ } else {
+  echo "<script> location.href='login.php'; </script>";
+ }
  // update
  if(isset($_REQUEST['empupdate'])){
   // Checking for Empty Fields

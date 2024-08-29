@@ -7,6 +7,20 @@ if(isset($_SESSION['is_adminlogin'])){
 } else {
     echo "<script>location.href='login.php'</script>";
 }
+$sql = "SELECT max(request_id) FROM submitrequest_tb";
+ $result = $conn->query($sql);
+ $row = mysqli_fetch_row($result);
+ $submitrequest = $row[0];
+
+ $sql = "SELECT max(request_id) FROM assignwork_tb";
+ $result = $conn->query($sql);
+ $row = mysqli_fetch_row($result);
+ $assignwork = $row[0];
+
+ $sql = "SELECT * FROM technician_tb";
+ $result = $conn->query($sql);
+ $totaltech = $result->num_rows;
+
 ?>
 
         <div class="col-sm-9 col-md-10"><!-- start dasgboard-->
@@ -15,8 +29,8 @@ if(isset($_SESSION['is_adminlogin'])){
                     <div class="card text-white bg-danger mb-3" style="max-widhth:18rem;">
                         <div class="card-header">Request Received</div>
                         <div class="card-body">
-                        <h4 calss="card-title">43</h4>
-                        <a class="btn text-white" href="#">View</a>
+                        <h4 calss="card-title">  <?php echo $submitrequest; ?> </h4>
+                        <a class="btn text-white" href="request.php">View</a>
                         </div>
                     </div>
                 </div>
@@ -24,8 +38,8 @@ if(isset($_SESSION['is_adminlogin'])){
                     <div class="card text-white bg-success mb-3" style="max-widhth:18rem;">
                         <div class="card-header">Assigned Work</div>
                         <div class="card-body">
-                        <h4 calss="card-title">20</h4>
-                        <a class="btn text-white" href="#">View</a>
+                        <h4 calss="card-title">  <?php echo $assignwork; ?> </h4>
+                        <a class="btn text-white" href="work.php">View</a>
                         </div>
                     </div>
                 </div>
@@ -33,8 +47,8 @@ if(isset($_SESSION['is_adminlogin'])){
                     <div class="card text-white bg-primary mb-3" style="max-widhth:18rem;">
                         <div class="card-header">No. Of Technician</div>
                         <div class="card-body">
-                        <h4 calss="card-title">3</h4>
-                        <a class="btn text-white" href="#">View</a>
+                        <h4 calss="card-title">  <?php echo $totaltech; ?> </h4>
+                        <a class="btn text-white" href="technician.php">View</a>
                         </div>
                     </div>
                 </div>
@@ -49,7 +63,7 @@ if(isset($_SESSION['is_adminlogin'])){
                     <table class="table">
                      <thead>
                       <tr>
-                       <th scope="col">User Id</th>
+                       <th scope="col">User ID</th>
                        <th scope="col">Name</th>
                        <th scope="col">Email</th>
                       </tr>

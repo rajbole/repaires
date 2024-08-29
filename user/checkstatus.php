@@ -1,6 +1,12 @@
 <?php
 include('includes/header.php');
 include('../dbConnection.php');
+session_start();
+if ($_SESSION['is_login']){
+    $rEmail = $_SESSION['rEmail'];
+} else {
+    echo "<script>location.href='userlogin.php'</script>";
+}
 ?>
 <div class="col-sm-9 col-md-10 mt-5">
     <div class="col-sm-2 bg-info sidebar py-2">Check Status</div>

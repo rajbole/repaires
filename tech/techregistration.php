@@ -32,23 +32,23 @@
           </div>
 
           <div class="form-group">
-            <i class="fas fa-user"></i><label for="Email" class="font-weight-bold pl-2">Email</label>
+            <i class="fas fa-envelope"></i><label for="Email" class="font-weight-bold pl-2">Email</label>
             <input type="email" class="form-control" placeholder="Email" name="rEmail">
           </div>
           <div class="form-group">
-            <i class="fas fa-user"></i><label for="name" class="font-weight-bold pl-2">Address</label>
+            <i class="fa fa-address-card  "></i><label for="name" class="font-weight-bold pl-2">Address</label>
             <input type="text" class="form-control" placeholder="Address" name="rName">
           </div>
           <div class="form-group">
-            <i class="fas fa-user"></i><label for="name" class="font-weight-bold pl-2">Specializations</label>
+            <i class="fa fa-wrench"></i><label for="name" class="font-weight-bold pl-2">Specializations</label>
             <input type="text" class="form-control" placeholder="Specializations" name="rName">
           </div>
           <div class="form-group">
-            <i class="fas fa-user"></i><label for="name" class="font-weight-bold pl-2">Years of Experience</label>
+            <i class="fas fa-user-check"></i><label for="name" class="font-weight-bold pl-2">Years of Experience</label>
             <input type="text" class="form-control" placeholder="Years of Experience" name="rName">
           </div>
           <div class="form-group">
-            <i class="fas fa-user"></i><label for="name" class="font-weight-bold pl-2">Location/Area of Service</label>
+            <i class="	fas fa-map-marker-alt"></i><label for="name" class="font-weight-bold pl-2">Location/Area of Service</label>
             <input type="text" class="form-control" placeholder="Location/Area of Service" name="rName">
           </div>
 

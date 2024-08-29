@@ -39,10 +39,9 @@ if(isset($_REQUEST['submitrequest'])){
       }
     }
    }
-   
 ?>
 <div class="col-sm-9 col-md-10 mt-5">
-    <div class="col-sm-2 bg-info sidebar py-2">Submit Request</div>
+    <div class="col-sm-2 bg-info sidebar py-2 text-center text-white">Submit Request</div>
   <form class="mx-5" action="" method="POST">
     <div class="form-group">
       <label for="inputRequestInfo">Request Info</label>
@@ -86,7 +85,7 @@ if(isset($_REQUEST['submitrequest'])){
         <label for="inputMobile">Mobile</label>
         <input type="text" class="form-control" id="inputMobile" name="requestermobile" onkeypress="isInputNumber(event)">
       </div>
-      <div class="form-group col-md-2">
+      <div class="form-group col-md-">
         <label for="inputDate">Date</label>
         <input type="date" class="form-control" id="inputDate" name="requestdate">
       </div>

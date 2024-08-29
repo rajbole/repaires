@@ -31,7 +31,7 @@ if(isset($_REQUEST['nameupdate'])){
 
 
         <div class="col-sm-6 mt-5"><!-- start Profile area -->
-        <div class="col-sm-2 bg-info sidebar py-2">Profile</div>
+        <div class="col-sm-2 bg-info sidebar py-2 text-white">Profile</div>
             <form action="" method="POST" class="mx-5">
                 <div class="from-group">
                     <label for="rEmail">Email</label><input type="email" class="form-control" name="rEmail" id="rEmail" value="<?php echo $rEmail ?>" readonly>

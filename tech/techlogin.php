@@ -50,7 +50,7 @@ $conn->close(); // Close the database connection
          margin-top: 8vh;
       }
    </style>
-  <title>Technicians Login</title>
+  <title>Technician Login</title>
 </head>
 
 <body>

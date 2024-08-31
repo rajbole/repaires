@@ -1,26 +1,34 @@
 <?php
 include('../dbConnection.php');
 session_start();
-if(!isset($_SESSION['is_login'])){
-  if(isset($_REQUEST['rEmail'])){
-    $rEmail = mysqli_real_escape_string($conn,trim($_REQUEST['rEmail']));
-    $rPassword = mysqli_real_escape_string($conn,trim($_REQUEST['rPassword']));
-    $sql = "SELECT u_email, u_password FROM user_tb WHERE u_email='".$rEmail."' AND u_password='".$rPassword."' limit 1";
-    $result = $conn->query($sql);
-    if($result->num_rows == 1){
-      
-      $_SESSION['is_login'] = true;
-      $_SESSION['rEmail'] = $rEmail;
-      // Redirecting to RequesterProfile page on Correct Email and Pass
-      echo "<script> location.href='userProfile.php'; </script>";
-      exit;
-    } else {
-      $msg = '<div class="alert alert-warning mt-2" role="alert"> Enter Valid Email and Password </div>';
-    }
+if (!isset($_SESSION['is_login'])) {
+  if (isset($_REQUEST['empEmail'])) {
+      $eEmail = mysqli_real_escape_string($conn, trim($_REQUEST['empEmail']));
+      $ePassword = mysqli_real_escape_string($conn, trim($_REQUEST['empPassword']));
+
+      // Use prepared statements to prevent SQL injection
+      $stmt = $conn->prepare("SELECT empEmail, empPassword FROM technician_tb WHERE empEmail = ? AND empPassword = ? LIMIT 1");
+      $stmt->bind_param("ss", $eEmail, $ePassword);
+      $stmt->execute();
+      $result = $stmt->get_result();
+
+      if ($result->num_rows == 1) {
+          $_SESSION['is_login'] = true;
+          $_SESSION['empEmail'] = $eEmail;
+          // Redirecting to Technician Profile page on Correct Email and Pass
+          echo "<script> location.href='techprofile.php'; </script>";
+          exit;
+      } else {
+          $msg = '<div class="alert alert-warning mt-2" role="alert"> Enter Valid Email and Password </div>';
+      }
+
+      $stmt->close(); // Close the prepared statement
   }
 } else {
-  echo "<script> location.href='userProfile.php'; </script>";
+  echo "<script> location.href='techprofile.php'; </script>";
 }
+
+$conn->close(); // Close the database connection
 ?>
 
 <!DOCTYPE html>
@@ -42,7 +50,7 @@ if(!isset($_SESSION['is_login'])){
          margin-top: 8vh;
       }
    </style>
-  <title>Login</title>
+  <title>Technicians Login</title>
 </head>
 
 <body>
@@ -50,7 +58,7 @@ if(!isset($_SESSION['is_login'])){
     <i class="fas fa-cog"></i>
     <span>Rapid Repair Resource</span>
   </div>
-  <p class="text-center" style="font-size: 20px;"> <i class="fas fa-user-secret text-danger"></i> <span>User LOGIN</span>
+  <p class="text-center" style="font-size: 20px;"> <i class="fas fa-user-secret text-danger"></i> <span>Technician Login</span>
   </p>
   <div class="container-fluid mb-5">
     <div class="row justify-content-center custom-margin">
@@ -58,20 +66,19 @@ if(!isset($_SESSION['is_login'])){
         <form action="" class="shadow-lg p-4" method="POST">
           <div class="form-group">
             <i class="fas fa-user"></i><label for="email" class="pl-2 font-weight-bold">Email</label><input type="email"
-              class="form-control" placeholder="Email" name="rEmail">
+              class="form-control" placeholder="Email" name="empEmail">
             <!--Add text-white below if want text color white-->
             <small class="form-text">We'll never share your email with anyone else.</small>
           </div>
           <div class="form-group">
             <i class="fas fa-key"></i><label for="pass" class="pl-2 font-weight-bold">Password</label><input type="password"
-              class="form-control" placeholder="Password" name="rPassword">
+              class="form-control" placeholder="Password" name="empPassword">
           </div>
           <button type="submit" class="btn btn-outline-danger mt-3 btn-block shadow-sm font-weight-bold">Login</button>
           <?php if(isset($msg)) {echo $msg; } ?>
         
         </form>
-        <div class="text-center"><a class="btn btn-info mt-3 shadow-sm font-weight-bold" href="../index.php">Back
-            to Home</a></div>
+        <div class="text-center"><a class="btn btn-info mt-3 shadow-sm font-weight-bold" href="techpage.php">Back</a></div>
       </div>
     </div>
   </div>

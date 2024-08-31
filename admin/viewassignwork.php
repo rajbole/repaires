@@ -65,7 +65,7 @@ session_start();
    <tr>
     <td>Pin Code</td>
     <td>
-     <?php if(isset($row['requeter_pin'])) {echo $row['requeter_pin']; }?>
+     <?php if(isset($row['requester_pin'])) {echo $row['requester_pin']; }?>
     </td>
    </tr>
    <tr>

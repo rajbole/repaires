@@ -9,7 +9,7 @@ session_start();
  }
 if(isset($_REQUEST['empsubmit'])){
  // Checking for Empty Fields
- if(($_REQUEST['empName'] == "") || ($_REQUEST['empCity'] == "") || ($_REQUEST['empMobile'] == "") || ($_REQUEST['empEmail'] == "")){
+ if(($_REQUEST['empName'] == "") || ($_REQUEST['empCity'] == "") || ($_REQUEST['empMobile'] == "") || ($_REQUEST['empEmail'] == "") || ($_REQUEST['empSpecial'] == "") || ($_REQUEST['empExperiance'] == "") || ($_REQUEST['empPassword'] == "")){
   // msg displayed if required field missing
   $msg = '<div class="alert alert-warning col-sm-6 ml-5 mt-2" role="alert"> Fill All Fileds </div>';
  } else {
@@ -18,7 +18,10 @@ if(isset($_REQUEST['empsubmit'])){
    $eCity = $_REQUEST['empCity'];
    $eMobile = $_REQUEST['empMobile'];
    $eEmail = $_REQUEST['empEmail'];
-   $sql = "INSERT INTO technician_tb (empName, empCity, empMobile, empEmail) VALUES ('$eName', '$eCity','$eMobile', '$eEmail')";
+   $eSpecial = $_REQUEST['empSpecial'];
+   $eExp = $_REQUEST['empExperiance'];
+   $ePassword = $_REQUEST['empPassword'];
+   $sql = "INSERT INTO technician_tb (empName, empCity, empMobile, empEmail, empSpecial, empExperiance, empPassword) VALUES ('$eName', '$eCity','$eMobile', '$eEmail', '$eSpecial', '$eExp', '$ePassword')";
    if($conn->query($sql) == TRUE){
     // below msg display on form submit success
     $msg = '<div class="alert alert-success col-sm-6 ml-5 mt-2" role="alert"> Added Successfully </div>';
@@ -47,6 +50,18 @@ if(isset($_REQUEST['empsubmit'])){
     <div class="form-group">
       <label for="empEmail">Email</label>
       <input type="email" class="form-control" id="empEmail" name="empEmail">
+    </div>
+    <div class="form-group">
+      <label for="empSpecial">Special</label>
+      <input type="text" class="form-control" id="empSpecial" name="empSpecial">
+    </div>
+    <div class="form-group">
+      <label for="empExperiance">Experiance</label>
+      <input type="text" class="form-control" id="empExperiance" name="empExperiance" onkeypress="isInputNumber(event)">
+    </div>
+    <div class="form-group">
+      <label for="empPassword">Password</label>
+      <input type="text" class="form-control" id="empPassword" name="empPassword">
     </div>
     <div class="text-center">
       <button type="submit" class="btn btn-info" id="empsubmit" name="empsubmit">Submit</button>

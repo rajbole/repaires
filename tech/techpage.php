@@ -17,7 +17,7 @@
          margin-top: 8vh;
       }
    </style>
-  <title>Login</title>
+  <title>Technicians</title>
 </head>
 
 <body>
@@ -32,10 +32,10 @@
       <div class="col-sm-6 col-md-4">
         <form action="" class="shadow-lg p-4" method="POST">
           <div class="form-group">
-          <div  class="text-center"><a class="btn btn-info mt-3 shadow-sm font-weight-bold" href="techregistration.php">Sign Up</a></div>
+          <div  class="text-center"><a class="btn btn-info mt-5 btn-block shadow-sm font-weight-bold" href="techregistration.php">Sign Up</a></div>
           </div>
           <div class="form-group">
-          <div  class="text-center"><a class="btn btn-info mt-3 shadow-sm font-weight-bold" href="techlogin.php">Alredy an Account</a></div>
+          <div  class="text-center"><a class="btn btn-info mt-5 btn-block shadow-sm font-weight-bold" href="techlogin.php">Alredy an Account</a></div>
           </div>
         </form>
         <div  class="text-center"><a class="btn btn-info mt-3 shadow-sm font-weight-bold" href="../index.php">Back to Home</a></div>

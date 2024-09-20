@@ -20,11 +20,8 @@
                     <li class="nav-item"><a class="nav-link active bg-info" href="dashboard.php"><i class="fas fa-user-edit"></i> Dashbord</a></li>
                     <li class="nav-item"><a class="nav-link" href="work.php"><i class="	fa fa-file"></i> work</a></li>
                     <li class="nav-item"><a class="nav-link" href="request.php"><i class="fa fa-align-center"></i> Requests</a></li>
-                    <li class="nav-item"><a class="nav-link" href="assets.php"><i class="fas fa-database"></i> Assets</a></li>
                     <li class="nav-item"><a class="nav-link" href="technician.php"><i class="fa fa-wrench"></i> Technician</a></li>
                     <li class="nav-item"><a class="nav-link" href="requesteruser.php"><i class="fas fa-user"></i> Requester users</a></li>
-                    <li class="nav-item"><a class="nav-link" href="sellreport.php"><i class="fas fa-table"></i> Sell Report</a></li>
-                    <li class="nav-item"><a class="nav-link" href="workreport.php"><i class="fas fa-table"></i> Work Report</a></li>
                     <li class="nav-item"><a class="nav-link" href="changepass.php"><i class="fas fa-key"></i> Change Password</a></li>
                     <li class="nav-item"><a class="nav-link" href="../logout.php"><i class="fas fa-sign-out-alt"></i>Logout</a></li>
             </div>

@@ -13,7 +13,7 @@
     $eMobile = $_REQUEST['empMobile'];
     $eEmail = $_REQUEST['empEmail']; 
     $eSpecial = $_REQUEST['empSpecial'];
-    $eExp = $_REQUEST['empExperiance	'];
+    $eExp = $_REQUEST['empExperiance'];
     $ePassword = $_REQUEST['empPassword'];
     $sql = "INSERT INTO technician_tb (empName, empCity, empMobile, empEmail, empSpecial, empExperiance, empPassword) VALUES ('$eName', '$eCity','$eMobile', '$eEmail', '$eSpecial', '$eExp', '$ePassword')";
     if($conn->query($sql) == TRUE){

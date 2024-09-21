@@ -2,14 +2,14 @@
 include('includes/header.php');
 include('../dbConnection.php');
 session_start();
-if ($_SESSION['is_login']){
+if ($_SESSION['is_login']) {
     $rEmail = $_SESSION['rEmail'];
 } else {
     echo "<script>location.href='userlogin.php'</script>";
 }
 ?>
 <div class="col-sm-9 col-md-10 mt-5">
-    <div class="col-sm-2 bg-info sidebar py-2">Check Status</div>
+    <div class="col-sm-2 bg-info sidebar py-2 text-white">Check Status</div>
 
     <!-- start second column -->
     <div class="col-sm-6 mt-5  mx-3">
@@ -120,8 +120,12 @@ if ($_SESSION['is_login']){
                             </td>
                         </tr>
                         <tr>
-                            <td>Technician Name</td>
-                            <td>harry</td>
+                            <td>Assigned Technician</td>
+                            <td>
+                                <?php if (isset($row['assign_tech'])) {
+                                    echo $row['assign_tech'];
+                                } ?>
+                            </td>
                         </tr>
                         <tr>
                             <td>Customer Sign</td>
@@ -136,7 +140,7 @@ if ($_SESSION['is_login']){
                 <div class="text-center">
                     <form class="d-print-none d-inline mr-3"><input class="btn btn-info" type="submit" value="Print"
                             onClick="window.print()"></form>
-                    <form class="d-print-none d-inline" action="work.php"><input class="btn btn-secondary" type="submit"
+                    <form  class="d-print-none d-inline" action="checkstatus.php"><input class="btn btn-secondary" type="submit"
                             value="Close"></form>
                 </div>
             <?php } else {

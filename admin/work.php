@@ -27,6 +27,7 @@ session_start();
       <th scope="col">Mobile</th>
       <th scope="col">Technician</th>
       <th scope="col">Assigned Date</th>
+      <th scope="col">Email</th>
       <th scope="col">Action</th>
     </tr>
   </thead>
@@ -40,6 +41,7 @@ session_start();
     <td>'.$row["requester_city"].'</td>
     <td>'.$row["requester_mobile"].'</td>
     <td>'.$row["assign_tech"].'</td>
+    <td>'.$row["empEmail"].'</td>
     <td>'.$row["assign_date"].'</td>
     <td><form action="viewassignwork.php" method="POST" class="d-inline"> <input type="hidden" name="id" value='. $row["request_id"] .'><button type="submit" class="btn btn-info" name="view" value="View"><i class="far fa-eye"></i></button></form>
     <form action="" method="POST" class="d-inline"><input type="hidden" name="id" value='. $row["request_id"] .'><button type="submit" class="btn btn-danger" name="delete" value="Delete"><i class="far fa-trash-alt"></i></button></form>

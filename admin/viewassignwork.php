@@ -93,6 +93,12 @@ session_start();
     </td>
    </tr>
    <tr>
+    <td>Technician Email</td>
+    <td>
+     <?php if(isset($row['empEmail'])) {echo $row['empEmail']; }?>
+    </td>
+   </tr>
+   <tr>
     <td>Customer Sign</td>
     <td></td>
    </tr>

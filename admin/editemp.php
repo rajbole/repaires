@@ -10,7 +10,7 @@ session_start();
  // update
  if(isset($_REQUEST['empupdate'])){
   // Checking for Empty Fields
-  if(($_REQUEST['empName'] == "") || ($_REQUEST['empCity'] == "") || ($_REQUEST['empMobile'] == "") || ($_REQUEST['empEmail'] == "")){
+  if(($_REQUEST['empName'] == "") || ($_REQUEST['empCity'] == "") || ($_REQUEST['empMobile'] == "") || ($_REQUEST['empEmail'] == "") || ($_REQUEST['empSpecial'] == "") || ($_REQUEST['empExperiance'] == "") || ($_REQUEST['empPassword'] == "")){
    // msg displayed if required field missing
    $msg = '<div class="alert alert-warning col-sm-6 ml-5 mt-2" role="alert"> Fill All Fileds </div>';
   } else {
@@ -20,7 +20,10 @@ session_start();
     $eCity = $_REQUEST['empCity'];
     $eMobile = $_REQUEST['empMobile'];
     $eEmail = $_REQUEST['empEmail'];
-  $sql = "UPDATE technician_tb SET empName = '$eName', empCity = '$eCity', empMobile = '$eMobile', empEmail = '$eEmail' WHERE empid = '$eId'";
+    $eSpecial = $_REQUEST['empSpecial'];
+    $eExp = $_REQUEST['empExperiance'];
+    $ePassword = $_REQUEST['empPassword'];
+  $sql = "UPDATE technician_tb SET empName = '$eName', empCity = '$eCity', empMobile = '$eMobile', empEmail = '$eEmail', empSpecial = '$eSpecial', empExperiance = '$eExp', empPassword = '$ePassword' WHERE empid = '$eId'";
     if($conn->query($sql) == TRUE){
      // below msg display on form submit success
      $msg = '<div class="alert alert-success col-sm-6 ml-5 mt-2" role="alert"> Updated Successfully </div>';
@@ -62,6 +65,19 @@ session_start();
     <div class="form-group">
       <label for="empEmail">Email</label>
       <input type="email" class="form-control" id="empEmail" name="empEmail" value="<?php if(isset($row['empEmail'])) {echo $row['empEmail']; }?>">
+    </div>
+    <div class="form-group">
+      <label for="empSpecial">Special</label>
+      <input type="text" class="form-control" id="empSpecial" name="empSpecial" value="<?php if(isset($row['empSpecial'])) {echo $row['empSpecial']; }?>">
+    </div>
+    <div class="form-group">
+      <label for="empExperiance">Mobile</label>
+      <input type="text" class="form-control" id="empExperiance" name="empExperiance" value="<?php if(isset($row['empExperiance'])) {echo $row['empExperiance']; }?>"
+        onkeypress="isInputNumber(event)">
+    </div>
+    <div class="form-group">
+      <label for="empPassword">Password</label>
+      <input type="text" class="form-control" id="empPassword" name="empPassword" value="<?php if(isset($row['empPassword'])) {echo $row['empPassword']; }?>">
     </div>
     <div class="text-center">
       <button type="submit" class="btn btn-info" id="empupdate" name="empupdate">Update</button>

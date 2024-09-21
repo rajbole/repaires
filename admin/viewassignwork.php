@@ -65,7 +65,7 @@ session_start();
    <tr>
     <td>Pin Code</td>
     <td>
-     <?php if(isset($row['requeter_pin'])) {echo $row['requeter_pin']; }?>
+     <?php if(isset($row['requester_pin'])) {echo $row['requester_pin']; }?>
     </td>
    </tr>
    <tr>
@@ -90,6 +90,12 @@ session_start();
     <td>Technician Name</td>
     <td>
      <?php if(isset($row['assign_tech'])) {echo $row['assign_tech']; }?>
+    </td>
+   </tr>
+   <tr>
+    <td>Technician Email</td>
+    <td>
+     <?php if(isset($row['empEmail'])) {echo $row['empEmail']; }?>
     </td>
    </tr>
    <tr>

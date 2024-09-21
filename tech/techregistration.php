@@ -1,6 +1,31 @@
 <?php
   include('../dbConnection.php');
-?>
+
+ if(isset($_REQUEST['empsubmit'])){
+  // Checking for Empty Fields
+  if(($_REQUEST['empName'] == "") || ($_REQUEST['empCity'] == "") || ($_REQUEST['empMobile'] == "") || ($_REQUEST['empEmail'] == "") || ($_REQUEST['empSpecial'] == "") || ($_REQUEST['empExperiance'] == "") || ($_REQUEST['empPassword'] == "")){
+   // msg displayed if required field missing
+   $msg = '<div class="alert alert-warning col-sm-6 ml-5 mt-2" role="alert"> Fill All Fileds </div>';
+  } else {
+    // Assigning User Values to Variable
+    $eName = $_REQUEST['empName'];
+    $eCity = $_REQUEST['empCity'];
+    $eMobile = $_REQUEST['empMobile'];
+    $eEmail = $_REQUEST['empEmail']; 
+    $eSpecial = $_REQUEST['empSpecial'];
+    $eExp = $_REQUEST['empExperiance'];
+    $ePassword = $_REQUEST['empPassword'];
+    $sql = "INSERT INTO technician_tb (empName, empCity, empMobile, empEmail, empSpecial, empExperiance, empPassword) VALUES ('$eName', '$eCity','$eMobile', '$eEmail', '$eSpecial', '$eExp', '$ePassword')";
+    if($conn->query($sql) == TRUE){
+     // below msg display on form submit success
+     $msg = '<div class="alert alert-success col-sm-6 ml-5 mt-2" role="alert"> Added Successfully </div>';
+    } else {
+     // below msg display on form submit failed
+     $msg = '<div class="alert alert-danger col-sm-6 ml-5 mt-2" role="alert"> Unable to Add </div>';
+    }
+  }
+  }
+ ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -21,47 +46,55 @@
 
 <body>
   <!-- Start Registration  -->
-  <div class="container pt-5" id="registration">
-    <h2 class="text-center">Create an technician Account</h2>
-    <div class="raw mt-4 mv-4">
-      <div class="col-md-6 offset-md-3">
-        <form action="" class="shadow-lg p-4" method="POST">
-          <div class="form-group">
-            <i class="fas fa-user"></i><label for="name" class="font-weight-bold pl-2">Name</label>
-            <input type="text" class="form-control" placeholder="Name" name="rName">
-          </div>
+  
 
-          <div class="form-group">
-            <i class="fas fa-user"></i><label for="Email" class="font-weight-bold pl-2">Email</label>
-            <input type="email" class="form-control" placeholder="Email" name="rEmail">
-          </div>
-          <div class="form-group">
-            <i class="fas fa-user"></i><label for="name" class="font-weight-bold pl-2">Address</label>
-            <input type="text" class="form-control" placeholder="Address" name="rName">
-          </div>
-          <div class="form-group">
-            <i class="fas fa-user"></i><label for="name" class="font-weight-bold pl-2">Specializations</label>
-            <input type="text" class="form-control" placeholder="Specializations" name="rName">
-          </div>
-          <div class="form-group">
-            <i class="fas fa-user"></i><label for="name" class="font-weight-bold pl-2">Years of Experience</label>
-            <input type="text" class="form-control" placeholder="Years of Experience" name="rName">
-          </div>
-          <div class="form-group">
-            <i class="fas fa-user"></i><label for="name" class="font-weight-bold pl-2">Location/Area of Service</label>
-            <input type="text" class="form-control" placeholder="Location/Area of Service" name="rName">
-          </div>
-
-          <div class="form-group">
-            <i class="fas fa-key"></i><label for="pass" class="font-weight-bold pl-2">New Password</label>
-            <input type="Password" class="form-control" placeholder="Password" name="rPassword">
-          </div>
-
-          <button type="submit" class="btn btn-info mt-5 btn-block shadow-sm font-weight-bold" name="rSignup">Sign Up</button>
-        </form>
-      </div>
+<div class="mt-5  mx-3 jumbotron myclass mainHeading">
+  <h3 class="text-center">Technician Registration</h3>
+  <form action="" method="POST">
+    <div class="form-group">
+      <label for="empName">Name</label>
+      <input type="text" class="form-control" id="empName" name="empName">
     </div>
-  </div>
+    <div class="form-group">
+      <label for="empCity">City</label>
+      <input type="text" class="form-control" id="empCity" name="empCity">
+    </div>
+    <div class="form-group">
+      <label for="empMobile">Mobile</label>
+      <input type="text" class="form-control" id="empMobile" name="empMobile" onkeypress="isInputNumber(event)">
+    </div>
+    <div class="form-group">
+      <label for="empEmail">Email</label>
+      <input type="email" class="form-control" id="empEmail" name="empEmail">
+    </div>
+    <div class="form-group">
+      <label for="empEmail">Speciality</label>
+      <input type="text" class="form-control" id="empSpecial" name="empSpecial">
+    </div>
+    <div class="form-group">
+      <label for="empExperiance">empExperiance</label>
+      <input type="text" class="form-control" id="empExperiance" name="empExperiance">
+    </div>
+    <div class="form-group">
+      <label for="empPassword">Password</label>
+      <input type="text" class="form-control" id="empPassword" name="empPassword">
+    </div>
+    <div class="text-center">
+      <button type="submit" class="btn btn-info" id="empsubmit" name="empsubmit">Submit</button>
+      <a href="techlogin.php" class="btn btn-danger">Go to Login</a>
+    </div>
+    <?php if(isset($msg)) {echo $msg; } ?>
+  </form>
+</div>
+<!-- Only Number for input fields -->
+<script>
+  function isInputNumber(evt) {
+    var ch = String.fromCharCode(evt.which);
+    if (!(/[0-9]/.test(ch))) {
+      evt.preventDefault();
+    }
+  }
+</script> 
      <!-- End Registration  -->
 
   <!-- Boostrap JavaScript -->

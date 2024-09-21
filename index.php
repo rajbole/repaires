@@ -36,7 +36,7 @@
         <li class="nav-item"><a href="#registration" class="nav-link">Registration</a></li>
         <li class="nav-item"><a href="user/userlogin.php" class="nav-link">Login</a></li>
         <li class="nav-item"><a href="#Contact" class="nav-link">Contact</a></li>
-        <li class="nav-item"><a href="tech/techregistration.php" class="nav-link">technicians</a></li>
+        <li class="nav-item"><a href="tech/techpage.php" class="nav-link">technicians</a></li>
       </ul>
     </div>
   </nav> <!-- End Navigation -->
@@ -68,11 +68,11 @@
     <div class="row mt-4">
       <div class="col-sm-4 mb-4">
         <a href="#"><i class="fas fa-tv fa-8x text-success"></i></a>
-        <h4 class="mt-4">Electronic Appliances</h4>
+        <h4 class="mt-4">Electronic Device</h4>
       </div>
       <div class="col-sm-4 mb-4">
         <a href="#"><i class="fas fa-sliders-h fa-8x text-primary"></i></a>
-        <h4 class="mt-4">Preventive Maintenance</h4>
+        <h4 class="mt-4">Maintenance</h4>
       </div>
       <div class="col-sm-4 mb-4">
         <a href="#"><i class="fas fa-cogs fa-8x text-info"></i></a>

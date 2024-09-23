@@ -21,6 +21,7 @@
                 <ul class="nav flex-column">
                     <li class="nav-item"><a class="nav-link active bg-info" href="techprofile.php"><i class="fas fa-user-cog"></i> Profile</a></li>
                     <li class="nav-item"><a class="nav-link" href="pendingRequest.php"><i class="far fa-file"></i> Your Work</a></li>
+                    <li class="nav-item"><a class="nav-link" href="completetask.php"><i class="fas fa-key"></i> Complete Tasks</a></li>
                     <li class="nav-item"><a class="nav-link" href="changepassword.php"><i class="fas fa-key"></i> Change Password</a></li>
                     <li class="nav-item"><a class="nav-link" href="../logout.php"><i class="fas fa-sign-out-alt"></i>Logout</a></li>
             </div>

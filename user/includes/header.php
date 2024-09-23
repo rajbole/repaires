@@ -22,6 +22,7 @@
                     <li class="nav-item"><a class="nav-link active bg-info" href="userProfile.php"><i class="fas fa-user"></i> Profile</a></li>
                     <li class="nav-item"><a class="nav-link" href="submitRequest.php"><i class="fab fa-accessible-icon"></i> Submit Request</a></li>
                     <li class="nav-item"><a class="nav-link" href="checkstatus.php"><i class="fas fa fa-check-square"></i> check Request</a></li>
+                    <li class="nav-item"><a class="nav-link" href="SubmitReview.php"><i class="fa fa-star checked"></i> Submit Review</a></li>
                     <li class="nav-item"><a class="nav-link" href="changepassword.php"><i class="fas fa-key"></i> Change Password</a></li>
                     <li class="nav-item"><a class="nav-link" href="../logout.php"><i class="fas fa-sign-out-alt"></i>Logout</a></li>
             </div>

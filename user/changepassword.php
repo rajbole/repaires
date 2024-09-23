@@ -32,7 +32,7 @@ if(isset($_REQUEST['passupdate'])){
 ?>
 
 <div class="col-sm-9 col-md-10 mt-5"><!-- user change password -->
-<div class="col-sm-2 bg-info sidebar py-2">Change Password</div>
+<div class="col-sm-2 bg-info sidebar py-2 text-white">Change Password</div>
 <div class="row">
     <div class="col-sm-6">
       <form class="mt-5 mx-5" method="POST">

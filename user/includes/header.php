@@ -11,7 +11,7 @@
     <title>userProfile</title>
 </head>
 <body>
-    <nav class="navbar navbar-dark fixed-top bg-info flex-md-nowrap p-0 shadow"><a class="navbar-brand col-sm-3 col-md-2 mr-0" href="userProfile.php">RapidRepaire</a></nav>
+    <nav class="navbar navbar-dark fixed-top bg-info flex-md-nowrap p-0 shadow"><a class="navbar-brand col-sm-3 col-md-2 mr-0" href="userProfile.php">RapidRepair</a></nav>
 
 <!-- start container -->
 <div class="container-fluid" style="margin-top:40px;">

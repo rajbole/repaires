@@ -85,13 +85,55 @@
    <?php include('UserRegistration.php') ?>
      <!-- End Registration  -->
   
+<!-- reviwe section satrt -->
+
+<div class="container pt-5" id="reviews">
+  <h2 class="text-center">Customer Reviews</h2>
+  <div class="row mt-4">
+    <!-- PHP code will generate reviews here -->
+    <?php
+    include('dbconnection.php'); // Make sure to include your database connection file
+
+    // Fetch reviews from the database
+    $sql = "SELECT review_id, user_email, service_request_id, rating, comments, created_at FROM reviews ORDER BY created_at DESC";
+    $result = $conn->query($sql);
+
+    if ($result->num_rows > 0) {
+      while ($row = $result->fetch_assoc()) {
+        echo '
+        <div class="col-md-4 mb-4">
+          <div class="card h-100">
+            <div class="card-body">
+              <h5 class="card-title">' . htmlspecialchars($row["user_email"]) . '</h5>
+              <h6 class="card-subtitle mb-2 text-muted">Rating: ' . htmlspecialchars($row["rating"]) . '/5</h6>
+              <p class="card-text">' . htmlspecialchars($row["comments"]) . '</p>
+            </div>
+            <div class="card-footer bg-info text-white">
+              ' . date("F j, Y", strtotime($row["created_at"])) . '
+            </div>
+          </div>
+        </div>
+        ';
+      }
+    } else {
+      echo '<p class="text-center">No reviews yet. Be the first to leave a review!</p>';
+    }
+    
+    // Close the database connection
+    $conn->close();
+    ?>
+  </div>
+</div>
+
+ <!-- reviwe section end -->
+
   <!-- contact  -->
   <?php include('Contactform.php') ?>
 <!-- end contact -->
         <div class="col-md-4 text-center">
           <strong>Headquarter:</strong><br>
           rapidrepair pvt ltd.<br>
-          Sangameshwar , Ratnagiri<br>
+          Devrukh , Ratnagiri<br>
           Sangameshwar - 415610<br>
           phone: +91 00000 00000<br>
           <a href="#" target="_blank">www.rapidrepair.com</a><br>

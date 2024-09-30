@@ -9,6 +9,9 @@ if ($_SESSION['is_login']) {
 }
 ?>
 
+
+
+
 // Handle review submission
 <?php
 if (isset($_REQUEST['submit_review'])) {
